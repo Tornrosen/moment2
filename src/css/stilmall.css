@@ -1,0 +1,13 @@
+body {
+    background-color: antiquewhite;
+    color:midnightblue;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align:center;
+    padding: 2%;
+}
+table {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
