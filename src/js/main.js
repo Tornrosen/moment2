@@ -27,11 +27,34 @@ displayCourses(courses);
 
 //skriva ut data
 
-function displayCourses(data) {
-console.log(data);
+function displayCourses(courses) {
+
 const coursesEl = document.querySelector("#publishInfo");
 coursesEl.innerHTML="";
 courses.forEach(course=>{
 coursesEl.innerHTML += `<tr><td>${course.code}</td><td>${course.coursename}</td><td>${course.progression}</td></tr>`
 }) 
 }
+
+//händelselyssnare för att sortera i bokstavsordning
+
+let courseCodeEl = document.getElementById("courseCode");
+
+courseCodeEl.addEventListener("click", sortCodes);
+document.querySelector("#name").addEventListener("click", sortCourseNames);
+document.querySelector("#progression").addEventListener("click", sortProgressions);
+
+//funktioner för att sortera i bokstavsordning
+
+function sortCodes(courses) {
+    courses.sort((a, b) => a.code > b.code ? 1 : -1);
+}
+
+function sortCourseNames(courses) {
+    courses.sort((a, b) => a.coursename > b.coursename ? 1 : -1);
+}
+
+function sortProgressions(courses) {
+    courses.sort((a, b) => a.progression > b.progression ? 1 : -1);
+}
+
