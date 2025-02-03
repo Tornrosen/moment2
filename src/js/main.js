@@ -8,6 +8,7 @@ let courses = [];
 
 window.onload = () => {
     loadCourses();
+    document.querySelector("#filter").addEventListener("input", filterCourses);
 }
 //hämta data
 
@@ -56,5 +57,17 @@ function sortCourseNames(courses) {
 
 function sortProgressions(courses) {
     courses.sort((a, b) => a.progression > b.progression ? 1 : -1);
+}
+
+//funktion för att filtrera kurser på namn eller kurskod
+
+function filterCourses () {
+    const filterEl = document.querySelector("#filter").value;
+
+    const filteredCourses = courses.filter (course =>
+        course.code.toLowerCase().includes(filterEl.toLowerCase())
+        ||course.coursename.toLowerCase().includes(filterEl.toLowerCase())
+    )
+    displayCourses(filteredCourses);
 }
 
