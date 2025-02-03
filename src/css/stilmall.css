@@ -4,6 +4,7 @@ body {
     margin: 0 auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align:center;
+    line-height: 1.5em;
     padding: 4%;
 }
 table {
