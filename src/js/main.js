@@ -41,7 +41,7 @@ coursesEl.innerHTML += `<tr><td>${course.code}</td><td>${course.coursename}</td>
 
 let courseCodeEl = document.getElementById("courseCode");
 
-courseCodeEl.addEventListener("click", sortCodes);
+courseCodeEl.addEventListener("click", function() {sortCodes(courses);});
 document.querySelector("#name").addEventListener("click", sortCourseNames);
 document.querySelector("#progression").addEventListener("click", sortProgressions);
 
@@ -49,14 +49,17 @@ document.querySelector("#progression").addEventListener("click", sortProgression
 
 function sortCodes(courses) {
     courses.sort((a, b) => a.code > b.code ? 1 : -1);
+    displayCourses(courses);
 }
 
-function sortCourseNames(courses) {
+function sortCourseNames() {
     courses.sort((a, b) => a.coursename > b.coursename ? 1 : -1);
+    displayCourses(courses);
 }
 
-function sortProgressions(courses) {
+function sortProgressions() {
     courses.sort((a, b) => a.progression > b.progression ? 1 : -1);
+    displayCourses(courses);
 }
 
 //funktion för att filtrera kurser på namn eller kurskod
