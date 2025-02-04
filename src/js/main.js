@@ -14,12 +14,12 @@ window.onload = () => {
 
 async function loadCourses() {
     try {
-const response = await fetch("https://webbutveckling.miun.se/files/ramschema_ht24.json");
-if (!response.ok) {
-    throw new Error("Fel vid anslutning...");
-}
-courses = await response.json();
-displayCourses(courses);
+        const response = await fetch("https://webbutveckling.miun.se/files/ramschema_ht24.json");
+        if (!response.ok) {
+            throw new Error("Fel vid anslutning...");
+        }
+        courses = await response.json();
+        displayCourses(courses);
     } catch (error) {
         console.error(error);
     }
@@ -30,18 +30,18 @@ displayCourses(courses);
 
 function displayCourses(courses) {
 
-const coursesEl = document.querySelector("#publishInfo");
-coursesEl.innerHTML="";
-courses.forEach(course=>{
-coursesEl.innerHTML += `<tr><td>${course.code}</td><td>${course.coursename}</td><td>${course.progression}</td></tr>`
-}) 
+    const coursesEl = document.querySelector("#publishInfo");
+    coursesEl.innerHTML = "";
+    courses.forEach(course => {
+        coursesEl.innerHTML += `<tr><td>${course.code}</td><td>${course.coursename}</td><td>${course.progression}</td></tr>`
+    })
 }
 
 //händelselyssnare för att sortera i bokstavsordning
 
 let courseCodeEl = document.getElementById("courseCode");
 
-courseCodeEl.addEventListener("click", function() {sortCodes(courses);});
+courseCodeEl.addEventListener("click", function () { sortCodes(courses); });
 document.querySelector("#name").addEventListener("click", sortCourseNames);
 document.querySelector("#progression").addEventListener("click", sortProgressions);
 
@@ -64,12 +64,12 @@ function sortProgressions() {
 
 //funktion för att filtrera kurser på namn eller kurskod
 
-function filterCourses () {
+function filterCourses() {
     const filterEl = document.querySelector("#filter").value;
 
-    const filteredCourses = courses.filter (course =>
+    const filteredCourses = courses.filter(course =>
         course.code.toLowerCase().includes(filterEl.toLowerCase())
-        ||course.coursename.toLowerCase().includes(filterEl.toLowerCase())
+        || course.coursename.toLowerCase().includes(filterEl.toLowerCase())
     )
     displayCourses(filteredCourses);
 }

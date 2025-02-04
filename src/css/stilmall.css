@@ -1,12 +1,13 @@
 body {
-    background-color:lemonchiffon;
-    color:midnightblue;
+    background-color: lemonchiffon;
+    color: midnightblue;
     margin: 0 auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align:center;
+    text-align: center;
     line-height: 1.5em;
     padding: 4%;
 }
+
 table {
     width: 80%;
     margin-left: 10%;

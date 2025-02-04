@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stilmall.css">
-    
+
     <title>Kursöversikt</title>
 </head>
+
 <body>
     <h1>Ramschema för Webbutvecklingsprogrammet</h1>
     <form>
-        <p>Sök på kurskod eller kursnamn: <input type="text" name="filter" id="filter"></p></form>
+        <p>Sök på kurskod eller kursnamn: <input type="text" name="filter" id="filter"></p>
+    </form>
     <table>
         <thead>
-    <tr>
-        <th scope="col" id="courseCode">Kurskod</th>
-        <th scope="col" id="name">Kursnamn</th>
-        <th scope="col" id="progression">Progression</th>
-    </tr></thead>
-    <tbody id="publishInfo"></tbody>
+            <tr>
+                <th scope="col" id="courseCode">Kurskod</th>
+                <th scope="col" id="name">Kursnamn</th>
+                <th scope="col" id="progression">Progression</th>
+            </tr>
+        </thead>
+        <tbody id="publishInfo"></tbody>
     </table>
     <script src="js/main.js"></script>
 </body>
+
 </html>
